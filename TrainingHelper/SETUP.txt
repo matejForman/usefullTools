@@ -1,0 +1,23 @@
+One-time setup so macOS stops asking for permissions after every build
+=====================================================================
+
+1. Create a signing certificate (once)
+   Keychain Access -> menu "Keychain Access" -> Certificate Assistant -> Create a Certificate...
+     Name:              TrainingHelper Dev
+     Identity Type:     Self Signed Root
+     Certificate Type:  Code Signing
+   -> Create.   (If you have an "Apple Development" certificate from Xcode you can use that:
+      SIGN_ID="Apple Development: Your Name (XXXXXXXXXX)" bash build.sh)
+
+2. Forget the old permission entries (once)
+     tccutil reset All com.openfoam.traininghelper
+   Also remove TrainingHelper from the lists in System Settings -> Privacy & Security
+   (Screen & System Audio Recording, Accessibility, Input Monitoring) if it is still there.
+
+3. Build and start
+     bash build.sh          (should print "Signed with: TrainingHelper Dev")
+     open TrainingHelper.app
+   If codesign asks for access to the key, choose "Always Allow".
+
+4. Grant the permissions once, then quit and start the app again.
+   Later rebuilds keep the permissions, because the signature stays the same.
