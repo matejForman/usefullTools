@@ -10,6 +10,8 @@ your **entire screen**. No window of its own gets in your way, and nothing is in
 
 The tools is completely vibecoded. 
 
+![TrainingHelper demo](docs/demo.gif)
+
 ## Features
 
 | Feature | How |
