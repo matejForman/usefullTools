@@ -8,6 +8,8 @@ timer that is, fittingly for a CFD course, a live fluid simulation.
 Everything is drawn as transparent overlay windows, so it shows up for the audience when you share
 your **entire screen**. No window of its own gets in your way, and nothing is installed system-wide.
 
+The tools is completely vibecoded. 
+
 ## Features
 
 | Feature | How |
